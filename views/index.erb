@@ -1,0 +1,3 @@
+<% @arts.each() do |art| %>
+    <li><%= art.description %> <a href="/arts/<%= art.id() %>/edit">Update this piece of art's name or artist</a></li>
+  <% end %>
