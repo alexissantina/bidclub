@@ -12,7 +12,7 @@ get("/") do
 end
 
 get('/art') do
-  @arts = Art.all()
+  @arts = {Art.all()}
   erb(:arts)
 end
 
@@ -34,13 +34,13 @@ post("/arts") do
 end
 
 get('/art/:id/edit') do
-  @arts = Art.all()
-  @art = Art.find(params.fetch('id'))
+  @arts = {Art.all()}
+  @art = {Art.find(params.fetch('id'))}
   erb(:edit)
 end
 
 patch('/art/:id') do
-  @art = Art.find(params.fetch('id'))
+  @art = {Art.find(params.fetch('id'))}
   name = params.fetch('name')
   artist = params.fetch('artist')
   medium = params.fetch('medium')
@@ -49,11 +49,11 @@ patch('/art/:id') do
   width = params.fetch('width')
   height = params.fetch('height')
   @art.update({:name => name, :artist => artist, :medium => medium, :edition => edition, :price => price, :width => width, :height => height})
-  @arts = Art.all()
+  @arts = {Art.all()}
   erb(:success)
 end
 
 get('/art/:id') do
-  @art = Art.find(params.fetch("id"))
+  @art = {Art.find(params.fetch("id"))}
   erb(:art)
 end
