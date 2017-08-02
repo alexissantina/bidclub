@@ -1,10 +1,10 @@
 class CreateArt < ActiveRecord::Migration[5.1]
   def change
-    create_table(:arts) do |a|
-      a.column(:name, :string)
-      a.column(:artist, :string)
+    create_table(:arts) do |t|
+      t.column(:name, :string)
+      t.column(:artist, :string)
 
-      a.timestamps()
+      t.timestamps()
     end
   end
 end

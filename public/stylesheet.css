@@ -1,0 +1,83 @@
+/* Generic Selectors */
+
+
+body {
+   font-family: 'Rubik', sans-serif;
+   font-size: 14px;
+   color: #000000;
+   background-color: #1BD8ED;
+}
+ 
+p {
+   width: 80%;
+   font-family: 'Rubik', sans-serif;
+}
+ 
+li {
+   list-style-type: none;
+   line-height: 150%;
+/*   list-style-image: url(./images/arrowSmall.png);*/
+}
+ 
+h1 {
+   font-family: 'Rubik Mono One', sans-serif;
+   font-size: 30px;
+   font-weight: bold;
+   color: #000000;
+}
+ 
+h2 {
+   font-family: Georgia, "Times New Roman", Times, serif;
+   font-size: 16px;
+   font-weight: bold;
+   color: #000000;
+   border-bottom: 1px solid #C6EC8C;
+}
+ 
+/**************** Pseudo classes ****************/
+ 
+a:link {
+   color: #006C78;
+   text-decoration: none;
+   font-weight: bold;
+}
+ 
+li :link {
+   color: #006C78;
+   text-decoration: none;
+   font-weight: bold;
+}
+ 
+a:visited {
+   color: #1FA4B3;
+   text-decoration: none;
+   font-weight: bold;
+}
+ 
+li a:visited {
+   color: #1FA4B3;
+   text-decoration: none;
+   font-weight: bold;
+}
+ 
+a:hover {
+   color: #1FA4B3;
+   padding-bottom: 0px;
+   font-weight: bold;
+   text-decoration: underline;
+}
+ 
+li a:hover {
+   display: block;
+   color: #1FA4B3;
+   padding-bottom: 0px;
+   font-weight: bold;
+/*   border-bottom-width: 1px;
+   border-bottom-style: solid;
+   border-bottom-color: #C6EC8C;*/
+}
+ 
+a:active {
+   color: #1FA4B3;
+   font-weight: bold;
+}

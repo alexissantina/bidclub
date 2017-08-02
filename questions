@@ -1,0 +1,29 @@
+how to show in art.erb characteristics only if they exist
+
+why is my layout only applying to my index page?
+-because I needed the / --it knew public was where stylesheets were
+
+why are my migrations failing
+-typo
+
+do I have to write tests for migrations
+-probably not, we write an up and a down migration so add the changes, and then down brings it back to original
+
+why is the browser still trying to render commented out html?
+	-can't comment in erb because combo of html and ruby--otherwise you wouldn't be able to template
+
+
+
+
+characteristics of art pieces
+name, artists, medium, dimensions, edition (left justified)
+
+"the bid" (price) (right justified)
+
+people can enter higher prices, and it automatically adjusts if the bid price is higher; have to put in payment info when they bid (login to venmo?)
+
+people will type in an id, and then it will pull up this information
+
+fonts: rubik and ribik mono one; din condensed and din condensed bold
+
+loading icon should be spinning dino; favicon should be dino

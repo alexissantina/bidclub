@@ -1,0 +1,15 @@
+<h2>Update <%=@art.name() %> </h2>
+
+<form action="/art/<%= @art.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text">
+  <br><label for="artist">Artist:</label>
+  <input id="artist" name="artist" type="text">
+  <br><label for="medium">Medium:</label>
+  <input id="medium" name="medium" type="text">
+  <br><label for="edition">Edition:</label>
+  <input id="edition" name="edition" type="text">
+
+  <button type="submit">Update</button>
+</form>

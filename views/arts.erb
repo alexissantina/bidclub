@@ -1,0 +1,9 @@
+<h1>Art Pieces</h1>
+
+<p>Nicole, here's your list o' art:</p>
+
+<ul>
+  <% @arts.each() do |art| %>
+    <li><a href="/art/<%= art.id() %>"><%= art.name() %></a></li>
+  <% end %>
+</ul>

@@ -1,0 +1,28 @@
+<body>
+<h2>Add a piece of art:</h2>
+
+<form action="/arts" method="post">
+  <br><label for="name">Name of art piece:</label>
+  <input id="name" name="name" type="text">
+
+  <br><label for="price">Artist:</label>
+  <input id="artist" name="artist" type="text">
+
+  <br><label for="medium">Medium:</label>
+  <input id="medium" name="medium" type="text">
+
+  <br><label for="width">Width (inches):</label>
+  <input id="width" max="200.0" min="1.0" name="width" type="number">
+
+  <br><label for="height">Height (inches):</label>
+  <input id="height" max="200.0" min="0" name="height" type="number">
+
+  <br><label for="edition">Edition:</label>
+  <input id="edition" max="200.0" min="1.0" name="edition" type="number">
+
+  <br><label for="price">Starting price:</label>
+  <input id="price" name="price" type="text">
+
+  <br><button type="submit">Add Art Piece</button>
+</form>
+</body>
