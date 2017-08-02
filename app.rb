@@ -6,7 +6,7 @@ require_relative("lib/art")
 #require("./lib/task")
 
 get("/") do
-  @arts = Art.all()
+  @arts = {Art.all()}
 #  @art = Art.find(params.fetch('id'))
   erb(:index)
 end
@@ -28,7 +28,7 @@ post("/arts") do
   height = params.fetch('height')
   width = params.fetch('width')
   edition = params.fetch('edition')
-  art = Art.new({:name=> name, :artist=> artist, :price=> price, :medium=> medium, :height=> height, :width=> width, :edition=> edition})
+  art = {Art.new({:name=> name, :artist=> artist, :price=> price, :medium=> medium, :height=> height, :width=> width, :edition=> edition})}
   art.save()
   erb(:success) #:layout_options => { :views => 'views/layout' }
 end
