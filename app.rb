@@ -1,9 +1,7 @@
-require("sinatra")
-require 'sinatra/activerecord'
-require("sinatra/reloader")
-also_reload("lib/**.rb")
-require_relative("lib/art")
-#require("./lib/task")
+require 'bundler/setup'
+Bundler.require(:default)
+
+Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get("/") do
   @arts = Art.all()
@@ -28,9 +26,12 @@ post("/arts") do
   height = params.fetch('height')
   width = params.fetch('width')
   edition = params.fetch('edition')
-  art = Art.new({:name=> name, :artist=> artist, :price=> price, :medium=> medium, :height=> height, :width=> width, :edition=> edition})
-  art.save()
-  erb(:success) #:layout_options => { :views => 'views/layout' }
+  @new_art = Art.new({:name=> name, :artist=> artist, :price=> price, :medium=> medium, :height=> height, :width=> width, :edition=> edition})
+  if @new_art.save()
+    redirect("/art/".concat(@new_art.id().to_s()))
+  else
+    erb(:index)
+  end
 end
 
 get('/art/:id/edit') do
@@ -54,6 +55,15 @@ patch('/art/:id') do
 end
 
 get('/art/:id') do
-  @art = Art.find(params.fetch("id"))
+  @art = Art.find(params.fetch("id").to_i)
   erb(:art)
 end
+
+# delete('/art/:id') do
+#   @art = Art.find(params.fetch("id").to_i()
+#   if @art.destroy()
+#     redirect("/arts")
+#   else
+#     erb(:art)
+#   end
+# end
