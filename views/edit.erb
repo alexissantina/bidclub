@@ -4,27 +4,31 @@
   <input name="_method" type="hidden" value="patch">
 
   <label for="name">Name:</label>
-  <input id="name" name="name" type="text">
+  <input id="name" name="name" value="<%= @art.name %>" type="text">
 
   <br><label for="artist">Artist:</label>
-  <input id="artist" name="artist" type="text">
+  <input id="artist" name="artist" value="<%= @art.artist %>" type="text">
 
   <br><label for="medium">Medium:</label>
-  <input id="medium" name="medium" type="text">
+  <input id="medium" name="medium" value="<%= @art.medium %>" type="text">
 
   <br><label for="width">Width (inches):</label>
-  <input id="width" max="200.0" min="1.0" name="width" type="number">
+  <input id="width" max="200.0" min="1.0" name="width" value="<%= @art.width %>" type="number">
 
   <br><label for="height">Height (inches):</label>
-  <input id="height" max="200.0" min="0" name="height" type="number">
+  <input id="height" max="200.0" min="1.0" name="height" value="<%= @art.height %>" type="number">
 
   <br><label for="edition">Edition:</label>
-  <input id="edition" max="200.0" min="1.0" name="edition" type="number">
+  <input id="edition" max="200.0" min="1.0" name="edition" value="<%= @art.edition %>" type="number">
 
   <br><label for="price">Starting price:</label>
-  <input id="price" name="price" type="number">
+  <input id="price" name="price" value="<%= @art.price %>" type="number">
 
   <button type="submit">Update</button>
 </form>
 
-<%= button_to "delete", @art, :action => 'destroy', :id => art.id }, :method => :delete %>
+<form action="/art/<%= @art.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit">Delete this art piece</button>
+</form>

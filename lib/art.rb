@@ -5,5 +5,6 @@ class Art < ActiveRecord::Base
 		where({:purchased => false})
 	end)
 
-	validates(:name, {:presence => true, :length => { :maximum => 50}})
+	# validates(:name, {:presence => true, :length => { :maximum => 50}, unless: :skip_name_validation})
+ #    attr_accessor :skip_name_validation
 end

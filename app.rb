@@ -5,7 +5,7 @@ Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get("/") do
   @arts = Art.all()
-#  @art = Art.find(params.fetch('id'))
+  # @art = Art.find(params.fetch('id'))
   erb(:index)
 end
 
@@ -49,6 +49,8 @@ patch('/art/:id') do
   price = params.fetch('price')
   width = params.fetch('width')
   height = params.fetch('height')
+  # @art.skip_name_validation = true
+  
   @art.update({:name => name, :artist => artist, :medium => medium, :edition => edition, :price => price, :width => width, :height => height})
   @arts = Art.all()
   erb(:success)
@@ -59,11 +61,11 @@ get('/art/:id') do
   erb(:art)
 end
 
-# delete('/art/:id') do
-#   @art = Art.find(params.fetch("id").to_i()
-#   if @art.destroy()
-#     redirect("/arts")
-#   else
-#     erb(:art)
-#   end
-# end
+delete('/art/:id') do
+  @art = Art.find(params.fetch("id"))
+  if @art.destroy()
+    redirect('/')
+  else
+    erb(:art)
+  end
+end
