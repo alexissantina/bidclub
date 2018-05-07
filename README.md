@@ -8,12 +8,10 @@ Install Postgres locally:
 * Install Postgres if you haven't `brew install postgres`
 
 Setup Bidclub db:
+* Run the Postgres service `pg_ctl -D "/usr/local/var/postgres" start`
 * Initialize a db `initdb /usr/local/var/postgres`
 * Create the tables `bundle exec rake db:create`
 * Run the migrations `bundle exec rake db:migrate`
-
-Run Postgres DB locally:
-* Run the Postgres service `pg_ctl -D "/usr/local/var/postgres" start`
 
 Launch the app using Sinatra:
 `ruby app.rb`
