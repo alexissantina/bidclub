@@ -12,6 +12,7 @@ Setup Bidclub db:
 * Initialize a db `initdb /usr/local/var/postgres`
 * Create the tables `bundle exec rake db:create`
 * Run the migrations `bundle exec rake db:migrate`
+* Set up test db `rake db:test:prepare`
 
 Launch the app using Sinatra:
 `ruby app.rb`
